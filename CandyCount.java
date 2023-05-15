@@ -10,9 +10,9 @@ class CandyCount {
             money = money - price;
         }
         
-    } else{ 
-        System.out.println("candies");
-    }
+    } 
+        System.out.println(candies);
+    
     
 }
 }
