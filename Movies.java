@@ -1,17 +1,17 @@
+class Decipherer {
 
-public class Movies {
-    public static void main(String[] args) {
-
-        String[][] movies = {
-            { "Indiana Jones et le Royaume du Crâne de Cristal", "Indiana Jones et la Dernière Croisade",
-            "Indiana Jones et le Temple maudit" },
-            { "maxime", "yann", "theo","julie", "julien", "christophe","michel", "jean", "yve" }
-        };
-        for (int i = 0; i < movies[0].length; i++) {
-            String titles = movies[0][i];
-            String actors = movies[1][i];
-            System.out.println("Dans le film " + titles + ", les principaux acteurs sont : " + actors);
-        }
+    public static String decrypt(String message) {
+      int messageLength = message.length() / 2;
+      String substringMessage = message.substring(5, (5 + messageLength));
+      String replaceString = substringMessage.replace("@#?", " ");
+      String reverse = new StringBuilder(replaceString).reverse().toString();
+      return reverse;
     }
-
-}
+  
+    public static void main(String[] args) {
+      System.out.println(decrypt("0@sn9sirppa@#?ia'jgtvryko1"));
+      System.out.println(decrypt("q8e?wsellecif@#?sel@#?setuotpazdsy0*b9+mw@x1vj"));
+      System.out.println(decrypt("aopi?sedohtém@#?sedhtmg+p9l!"));
+    }
+  
+  }
